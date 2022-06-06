@@ -3,8 +3,16 @@ import { makeAutoObservable } from 'mobx'
 export default class DeviceStore {
   constructor() {
     this._types = [
-      { id: 1, name: 'Холодильники' },
-      { id: 2, name: 'Смартфоны' },
+      { id: 1, name: 'Телевизоры' },
+      { id: 2, name: 'Ноутбуки' },
+      { id: 3, name: 'Смартфоны' },
+      { id: 4, name: 'Планшеты' },
+      { id: 5, name: 'Аксессуары' },
+      { id: 6, name: 'Холодильники' },
+      { id: 7, name: 'Вентиляторы' },
+      { id: 8, name: 'Очистители воздуха' },
+      { id: 9, name: 'Мелкая бытовая техника' },
+      { id: 10, name: 'Крупная бытовая техника' },
     ]
     this._brands = [
       { id: 1, name: 'Samsung' },
@@ -40,6 +48,9 @@ export default class DeviceStore {
         img: `https://avatars.mds.yandex.net/get-mpic/5366650/img_id5150216314890197601.png/orig`,
       },
     ]
+
+    this._selectedType = {}
+
     makeAutoObservable(this)
   }
 
@@ -52,6 +63,9 @@ export default class DeviceStore {
   setDevices(devices) {
     this._devices = devices
   }
+  setSelectedType(type) {
+    this._selectedType = type
+  }
 
   get types() {
     return this._types
@@ -63,5 +77,9 @@ export default class DeviceStore {
 
   get devices() {
     return this._devices
+  }
+
+  get selectedType() {
+    return this._selectedType
   }
 }
