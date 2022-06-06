@@ -1,11 +1,11 @@
 import React from 'react'
-import { Button, Card, Container, Form, Row } from 'react-bootstrap'
+import { Button, Card, Container, Form } from 'react-bootstrap'
 import { NavLink, useLocation } from 'react-router-dom'
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts'
 
 const Auth = () => {
   const location = useLocation()
-  const isLogin = location.pathname == LOGIN_ROUTE
+  const isLogin = location.pathname === LOGIN_ROUTE
 
   return (
     <Container
