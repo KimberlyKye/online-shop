@@ -20,7 +20,7 @@ const NavBar = observer(() => {
               onClick={() => {
                 user.setIsAuth(false)
               }}
-              className='ms-4'
+              className='ms-3'
             >
               Log out
             </Button>
